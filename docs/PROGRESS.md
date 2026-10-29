@@ -11,6 +11,12 @@
 
 ## السجل
 
+### Git وGitHub (2026-10-29)
+- بطلب المالك: `git init` (الفرع `main`)، ورفع المشروع إلى `https://github.com/abakelkhaleg-bit/Abak-Elkhaleg.git` في commit أول (232 ملفًا).
+- `.gitignore` يستثني كل `.env*` عدا `.env.example`، وملفات المفاتيح، و`.vercel`، ومخرجات البناء والاختبار.
+- فحص قبل الرفع: لا أسرار حقيقية (3 نتائج نصوص وهمية داخل الاختبارات). وبعد الرفع تأكدنا أن `.env.local` ليس في المستودع.
+- [ADR 0011](decisions/0011-git-and-github.md) يحل محل جزء Git في ADR 0002، وحُدّثت PROJECT_PLAN وSECURITY وDEPLOYMENT.
+
 ### المرحلة 6 — واتساب والطلبات (2026-10-29)
 **ما تم:**
 - **إنشاء الطلب** (`src/server/orders.service.ts`، `createOrderAction`):
