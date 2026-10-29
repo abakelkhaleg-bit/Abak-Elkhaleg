@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/*
+ * Design Tokens — عطور عبق الخليج
+ * مصدر واحد للألوان والخطوط والمسافات يستخدمه المتجر ولوحة الإدارة.
+ * الألوان مستخرجة من الشعار (ذهبي على عاجي). راجع ARCHITECTURE.md §7.
+ */
+@theme {
+  /* الألوان الأساسية */
+  --color-ivory: #fbf6ec;
+  --color-cream: #f3ead8;
+  --color-sand: #e6d7b8;
+  --color-charcoal: #1c1915;
+  --color-espresso: #3e2a17;
+  --color-gold: #b8862f;
+  --color-gold-light: #d9b56a;
+  --color-gold-text: #8a6420;
+  --color-muted: #6b5f50;
+
+  /* ألوان الحالات */
+  /* #256b42 يحقق AA (≈5.6:1) على success-soft — #2f7d4f كان 4.32:1 فقط */
+  --color-success: #256b42;
+  --color-success-soft: #e3f1e8;
+  /* #8f5600 يحقق تباين AA (≈5.5:1) على warning-soft وعلى الأبيض */
+  --color-warning: #8f5600;
+  --color-warning-soft: #fbefd9;
+  --color-danger: #b3261e;
+  --color-danger-soft: #f9e1df;
+
+  /* الخطوط */
+  --font-sans: var(--font-tajawal), "Tajawal", system-ui, sans-serif;
+
+  /* الزوايا */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* الظلال */
+  --shadow-soft: 0 1px 2px rgb(28 25 21 / 0.06), 0 4px 12px rgb(28 25 21 / 0.06);
+  --shadow-lifted: 0 2px 4px rgb(28 25 21 / 0.08), 0 12px 32px rgb(28 25 21 / 0.1);
+
+  /* الحركة */
+  --ease-soft: cubic-bezier(0.2, 0, 0, 1);
+  --default-transition-duration: 180ms;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-espresso);
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-light);
+    color: var(--color-charcoal);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

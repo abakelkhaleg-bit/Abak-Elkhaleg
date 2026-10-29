@@ -1,0 +1,63 @@
+{
+  "name": "abak-elkhalig",
+  "version": "0.1.0",
+  "private": true,
+  "description": "متجر عطور عبق الخليج",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "brand:assets": "tsx scripts/gen-brand-assets.ts",
+    "db:indexes": "tsx scripts/db-indexes.ts",
+    "seed:dev": "tsx scripts/seed-dev.ts",
+    "admin:create": "node --conditions=react-server --import tsx scripts/create-admin.ts",
+    "admin:reset-password": "node --conditions=react-server --import tsx scripts/reset-admin-password.ts",
+    "orders:purge-pii": "node --conditions=react-server --import tsx scripts/purge-order-pii.ts"
+  },
+  "dependencies": {
+    "@node-rs/argon2": "2.2.2",
+    "cloudinary": "2.11.0",
+    "clsx": "2.1.1",
+    "file-type": "22.2.0",
+    "lucide-react": "1.57.0",
+    "mongoose": "9.11.2",
+    "next": "16.4.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "server-only": "0.0.1",
+    "tailwind-merge": "3.7.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.64.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.1",
+    "mongodb-memory-server": "11.3.0",
+    "png-to-ico": "3.0.2",
+    "prettier": "3.9.10",
+    "sharp": "0.35.5",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.2",
+    "vite": "8.3.4",
+    "vitest": "5.0.4"
+  }
+}

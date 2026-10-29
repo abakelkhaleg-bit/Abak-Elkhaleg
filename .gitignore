@@ -1,0 +1,28 @@
+# ما يجب ألا يُرفع أبدًا: الأسرار، ومخرجات البناء والاختبار، والاعتماديات.
+
+# الاعتماديات ومخرجات البناء
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+
+# مخرجات الاختبارات
+coverage
+playwright-report
+test-results
+
+# الأسرار ومتغيرات البيئة (.env.example فقط يُرفع لأنه بلا قيم)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+.vercel
+
+# إعدادات محلية وسجلات
+.claude/settings.local.json
+*.log
+.DS_Store
+Thumbs.db
